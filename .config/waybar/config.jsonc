@@ -38,44 +38,56 @@
     "max-length": 40,
     "exec": "~/.config/waybar/audio.sh",
     "on-click": "playerctl play-pause",
-    "interval": 1,
+    "interval": 10,
     "format-icons": {
       "Playing": "<span font='13'></span>",
       "Paused": "<span font='13'></span>"
     }
   },
   "custom/arGap": {
-    "format": ""
+    "format": "",
+    "tooltip": false
   },
   "custom/archthing": {
-    "format": ""
+    "format": "",
+    "tooltip": false,
+    "on-click": "rofi -show drun -normal-window -steal-focus -modes drun,run,filebrowser,window"
   },
   "custom/wsGap": {
-    "format": ""
+    "format": "",
+    "tooltip": false
   },
   "custom/mgl": {
-    "format": ""
+    "format": "",
+    "tooltip": false
   },
   "custom/mgr": {
-    "format": ""
+    "format": "",
+    "tooltip": false
   },
   "custom/paGap": {
-    "format": ""
+    "format": "",
+    "tooltip": false
   },
   "custom/blGap": {
-    "format": ""
+    "format": "",
+    "tooltip": false
   },
   "custom/baGap": {
-    "format": ""
+    "format": "",
+    "tooltip": false
   },
   "custom/netGap": {
-    "format": ""
+    "format": "",
+    "tooltip": false
   },
   "custom/clGap": {
-    "format": ""
+    "format": "",
+    "tooltip": false
   },
   "clock": {
     "format": "<span font='13'>{:%H:%M}</span>",
+    "tooltip-format": "{:%H:%M  |  %Z}",
     "on-click": "galendae"
   },
   "backlight": {
@@ -96,7 +108,7 @@
       "critical": 15
     },
     "format": "{icon}",
-    "tooltip-format": "{capacity} : {time}",
+    "tooltip-format": "{capacity}%  |  {time}",
     "format-charging": "{icon}",
     "format-icons": [
       "󰁺",
@@ -113,7 +125,7 @@
   },
   "network": {
     "format": "󰖩{icon}",
-    "tooltip-format": "{ifname}:{ipaddr}",
+    "tooltip-format": "{ifname}  |  {ipaddr}",
     "format-icons": [
       "󰣾",
       "󰣴",
@@ -126,7 +138,7 @@
   },
   "pulseaudio": {
     "format": "󰕾{icon}",
-    "tooltip-format": "{volume}%",
+    "format-muted": "",
     "format-icons": {
       "default": [
         "󰣾",
