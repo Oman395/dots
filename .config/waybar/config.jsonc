@@ -1,0 +1,141 @@
+{
+  "layer": "top",
+  "height": 30,
+  "spacing": 0,
+  "modules-left": [
+    "wlr/workspaces",
+    "custom/arGap",
+    "custom/archthing",
+    "custom/wsGap"
+  ],
+  "modules-center": [
+    "custom/mgl",
+    "custom/playerctl",
+    "custom/mgr"
+  ],
+  "modules-right": [
+    "custom/paGap",
+    "pulseaudio",
+    "custom/blGap",
+    "backlight",
+    "custom/baGap",
+    "battery",
+    "custom/netGap",
+    "network",
+    "custom/clGap",
+    "clock"
+  ],
+  "wlr/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
+  "custom/playerctl": {
+    "format": "{icon}<span font='13'>  {}</span>",
+    "return-type": "json",
+    "max-length": 40,
+    "exec": "~/.config/waybar/audio.sh",
+    "on-click": "playerctl play-pause",
+    "interval": 1,
+    "format-icons": {
+      "Playing": "<span font='13'></span>",
+      "Paused": "<span font='13'></span>"
+    }
+  },
+  "custom/arGap": {
+    "format": ""
+  },
+  "custom/archthing": {
+    "format": ""
+  },
+  "custom/wsGap": {
+    "format": ""
+  },
+  "custom/mgl": {
+    "format": ""
+  },
+  "custom/mgr": {
+    "format": ""
+  },
+  "custom/paGap": {
+    "format": ""
+  },
+  "custom/blGap": {
+    "format": ""
+  },
+  "custom/baGap": {
+    "format": ""
+  },
+  "custom/netGap": {
+    "format": ""
+  },
+  "custom/clGap": {
+    "format": ""
+  },
+  "clock": {
+    "format": "<span font='13'>{:%H:%M}</span>",
+    "on-click": "galendae"
+  },
+  "backlight": {
+    "format": "󰃠{icon}",
+    "tooltip-format": "{percent}%",
+    "tooltip": true,
+    "format-icons": [
+      "󰣾",
+      "󰣴",
+      "󰣶",
+      "󰣸",
+      "󰣺"
+    ]
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}",
+    "tooltip-format": "{capacity} : {time}",
+    "format-charging": "{icon}",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
+  },
+  "network": {
+    "format": "󰖩{icon}",
+    "tooltip-format": "{ifname}:{ipaddr}",
+    "format-icons": [
+      "󰣾",
+      "󰣴",
+      "󰣶",
+      "󰣸",
+      "󰣺"
+    ],
+    "on-click": "~/.config/rofi/rofi-iwd-menu/rofi-wifi-menu.sh",
+    "format-disconnected": "󰖩󰣽"
+  },
+  "pulseaudio": {
+    "format": "󰕾{icon}",
+    "tooltip-format": "{volume}%",
+    "format-icons": {
+      "default": [
+        "󰣾",
+        "󰣴",
+        "󰣶",
+        "󰣸",
+        "󰣺"
+      ]
+    },
+    "on-click": "pavucontrol"
+  }
+}
